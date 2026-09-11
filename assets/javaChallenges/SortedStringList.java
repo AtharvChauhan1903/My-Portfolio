@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class challenge90 {
+public class SortedStringList {
     static void main() {
         Scanner input=new Scanner(System.in);
         List<String>userInput=new ArrayList<>();

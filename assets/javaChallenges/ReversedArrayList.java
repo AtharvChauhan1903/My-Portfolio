@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class challenge93 {
+public class ReversedArrayList {
     static void main() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the size of the array you want");

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.function.BinaryOperator;
 
-public class Challenge106 {
+public class BinaryOperatorMultiplication {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the values of A");

@@ -1,12 +1,12 @@
-public class Challenge99 extends Thread{
+public class ThreadCreation extends Thread{
    public void run(){
        for(int i=0;i<10;i++)
            System.out.println("Hello from "+Thread.currentThread().getName());
    }
 
     static void main() {
-        Challenge99 t1=new Challenge99();
-        Challenge99 t2=new Challenge99();
+        ThreadCreation t1=new ThreadCreation();
+        ThreadCreation t2=new ThreadCreation();
         t1.setName("Thread 1");
         t2.setName("Thread 2");
         t1.start();

@@ -1,5 +1,5 @@
 
-public class challenge51 {
+public class LibraryExecution {
    public static void main() {
         book b1=new book();
         book b2=new book();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge65 {
+public class LoopExitDemo {
     static void main() {
         Scanner input=new Scanner(System.in);
         String exit="Exit";

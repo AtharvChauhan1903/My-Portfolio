@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
- class challenge11 {
+ class TriangleArea {
 
         static void main() {
             System.out.println("Enter the height and breadth of the triangle:");

@@ -1,4 +1,4 @@
-public class challenge42 {
+public class ArrayMinMax {
     static void main() {
         int[]arr=arrayutilities.arraycreation();
         int smallest=arr[0];

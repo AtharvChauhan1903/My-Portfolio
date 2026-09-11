@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Challenge109 {
+public class NumberListInput {
     static void main() {
         List<Integer> list=new ArrayList<>();
         Scanner input=new Scanner(System.in);

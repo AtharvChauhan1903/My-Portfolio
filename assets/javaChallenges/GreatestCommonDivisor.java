@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge33 {
+public class GreatestCommonDivisor {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the first number");

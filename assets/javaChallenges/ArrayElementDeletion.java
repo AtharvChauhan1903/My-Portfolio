@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge44 {
+public class ArrayElementDeletion {
     static void main() {
         Scanner input=new Scanner(System.in);
         int[] arr=arrayutilities.arraycreation();

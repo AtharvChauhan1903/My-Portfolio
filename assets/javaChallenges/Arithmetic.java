@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class challenge8{
+class Arithmetic{
     static void main() {
         Scanner input= new Scanner(System.in) ;
         System.out.print("Enter the first number:");

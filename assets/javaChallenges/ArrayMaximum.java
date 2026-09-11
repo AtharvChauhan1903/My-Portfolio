@@ -1,4 +1,4 @@
-public class challenge63 {
+public class ArrayMaximum {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         int maximum=arr[0];

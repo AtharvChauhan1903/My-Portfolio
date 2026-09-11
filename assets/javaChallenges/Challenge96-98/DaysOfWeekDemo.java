@@ -1,6 +1,6 @@
 package Challenge9698;
 
-public class challenge96{
+public class DaysOfWeekDemo{
     static void main() {
 
         for(days e:days.values()){

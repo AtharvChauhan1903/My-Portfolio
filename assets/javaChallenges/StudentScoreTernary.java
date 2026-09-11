@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge56ternary {
+public class StudentScoreTernary {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("ENter the number");

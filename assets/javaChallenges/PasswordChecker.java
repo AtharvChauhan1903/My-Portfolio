@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge59 {
+public class PasswordChecker {
     static void main() {
         Scanner input=new Scanner(System.in);
         String password="5691b100";

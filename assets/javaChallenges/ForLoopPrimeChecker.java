@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge62 {
+public class ForLoopPrimeChecker {
 
     static void main() {
         Scanner input = new Scanner(System.in);

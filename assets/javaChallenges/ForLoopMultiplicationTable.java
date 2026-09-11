@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge61 {
+public class ForLoopMultiplicationTable {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Which number's table do you want");

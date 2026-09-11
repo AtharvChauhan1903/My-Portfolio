@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge64 {
+public class ArrayOccurrencesForLoop {
     static void main() {
         Scanner input=new Scanner(System.in);
         int[] arr=arrayutilities.arraycreation();

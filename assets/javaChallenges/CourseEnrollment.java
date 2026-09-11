@@ -1,4 +1,4 @@
-public class challenge52 {
+public class CourseEnrollment {
     static void main() {
         course.setMaxCapacity(10);
         course java=new course();

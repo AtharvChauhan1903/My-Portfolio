@@ -1,13 +1,13 @@
-public class Challenge101 extends Thread {
+public class ThreadJoinDemo extends Thread {
     public void run(){
         for(int i=0;i<10;i++)
             System.out.println("Hello from "+Thread.currentThread().getName());
     }
 
     static void main(String[] args) {
-        Challenge101 t1=new Challenge101();
-        Challenge101 t2=new Challenge101();
-        Challenge101 t3=new Challenge101();
+        ThreadJoinDemo t1=new ThreadJoinDemo();
+        ThreadJoinDemo t2=new ThreadJoinDemo();
+        ThreadJoinDemo t3=new ThreadJoinDemo();
         t3.setName("Thread 3");
         t1.setName("Thread 1");
         t2.setName("Thread 2");

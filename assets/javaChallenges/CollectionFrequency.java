@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class challenge91 {
+public class CollectionFrequency {
     static void main() {
         Scanner input=new Scanner(System.in);
         Collection<String> Arr=new ArrayList<>();

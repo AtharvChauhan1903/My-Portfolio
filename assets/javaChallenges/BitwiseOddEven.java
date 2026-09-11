@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge27 {
+public class BitwiseOddEven {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter your number");

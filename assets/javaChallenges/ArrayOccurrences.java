@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge41 {
+public class ArrayOccurrences {
     static void main() {
         Scanner input=new Scanner(System.in);
         int[] arr=arrayutilities.arraycreation();

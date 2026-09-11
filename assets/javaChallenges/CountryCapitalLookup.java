@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class challenge98 {
+public class CountryCapitalLookup {
     static void main() {
         HashMap<String, String> Map=new HashMap<>();
         Map.put("India","New Delhi");

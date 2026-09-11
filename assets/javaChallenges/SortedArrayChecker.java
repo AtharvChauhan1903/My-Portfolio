@@ -1,4 +1,4 @@
-public class challenge43 {
+public class SortedArrayChecker {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         int count=0;

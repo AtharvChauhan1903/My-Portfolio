@@ -1,9 +1,9 @@
-package Challenge111;
+package StreamFactorial;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Challenge111 {
+public class StreamFactorial {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the number whose factorial you want");

@@ -1,4 +1,4 @@
-public class challenge45 {
+public class ArrayReversal {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         for(int i=0;i<(arr.length/2);i++){

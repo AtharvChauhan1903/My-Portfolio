@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class challenge13 {
+public class CompoundInterest {
     static void main() {
         System.out.println("Enter the parameters for interest and amount:");
         Scanner input=new Scanner(System.in);

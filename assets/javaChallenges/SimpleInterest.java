@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
- class challenge12 {
+ class SimpleInterest {
 
         static void main() {
             System.out.println("Enter the parameters for interest and amount:");

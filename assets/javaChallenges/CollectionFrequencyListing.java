@@ -3,7 +3,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class challenge91copy {
+public class CollectionFrequencyListing {
     static void main() {
         Scanner input = new Scanner(System.in);
         Collection<String> Arr = new ArrayList<>();

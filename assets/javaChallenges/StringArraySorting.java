@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Challenge107 {
+public class StringArraySorting {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter how many elements you want in a the array");

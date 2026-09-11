@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.util.concurrent.*;
 
-public class Challenge105 {
+public class CallableFutureAddition {
     static void main() {
         ExecutorService exe= Executors.newSingleThreadExecutor();
         Scanner input=new Scanner(System.in);

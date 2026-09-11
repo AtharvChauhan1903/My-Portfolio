@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge36 {
+public class FibonacciSeries {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the final range for Fibonacci series:");

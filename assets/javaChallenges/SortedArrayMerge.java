@@ -1,4 +1,4 @@
-public class challenge47 {
+public class SortedArrayMerge {
     static void main() {
         int[] arr = arrayutilities.arraycreation();
         int[] arr2 = arrayutilities.arraycreation();

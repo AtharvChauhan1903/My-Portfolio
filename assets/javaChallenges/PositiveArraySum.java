@@ -1,4 +1,4 @@
-public class challenge66 {
+public class PositiveArraySum {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         int sum=0;

@@ -1,6 +1,6 @@
-package challenge85;
+package MethodOverloading;
 
-public class challenge85 {
+public class MethodOverloading {
     public static int add(int num1,int num2){
         return num1+num2;
     }

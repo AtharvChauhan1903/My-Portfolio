@@ -1,8 +1,8 @@
-public class challenge70 {
+public class StudentToString {
     private String Name;
     private int Age;
     private String  Caste;
-    public  challenge70(String name,int Age,String Caste){
+    public  StudentToString(String name,int Age,String Caste){
         this.Name=name;
         this.Age=Age;
         this.Caste=Caste;
@@ -14,8 +14,8 @@ public class challenge70 {
     }
 
     static void main(){
-        challenge70 st1=new challenge70("Atharv",20,"General");
-        challenge70 st2=new challenge70("Aarohi",17,"General");
+        StudentToString st1=new StudentToString("Atharv",20,"General");
+        StudentToString st2=new StudentToString("Aarohi",17,"General");
         System.out.println(st1);
         System.out.println(st2);
 

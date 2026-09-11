@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge74 {
+public class GuessingGame {
     static void main() {
         Scanner input=new Scanner(System.in);
         int answer=(int)(Math.random()*9)+1;

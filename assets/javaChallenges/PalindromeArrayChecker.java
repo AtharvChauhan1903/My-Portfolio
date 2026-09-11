@@ -1,4 +1,4 @@
-public class challenge46 {
+public class PalindromeArrayChecker {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         int[] arr2=arrayutilities.arraycreation();

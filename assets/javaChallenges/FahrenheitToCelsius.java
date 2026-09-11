@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class challenge14 {
+class FahrenheitToCelsius {
      static void main() {
          Scanner input=new Scanner(System.in);
          System.out.println("Enter the temperature in Fahrenheit");

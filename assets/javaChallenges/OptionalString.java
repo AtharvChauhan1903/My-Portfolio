@@ -1,9 +1,9 @@
-package Challenge112;
+package OptionalString;
 
 import java.util.Optional;
 import java.util.Scanner;
 
-public class Challenge112 {
+public class OptionalString {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the string you want to enter");

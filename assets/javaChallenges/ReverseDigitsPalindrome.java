@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge35and38 {
+public class ReverseDigitsPalindrome {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the number");

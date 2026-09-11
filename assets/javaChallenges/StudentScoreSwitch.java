@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge56switch {
+public class StudentScoreSwitch {
     static void main() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number");

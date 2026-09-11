@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class challenge15 {
+class PositiveNegativeZero {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the number");

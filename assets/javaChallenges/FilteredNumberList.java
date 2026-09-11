@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class Challenge113 {
+public class FilteredNumberList {
     static void main() {
         List<Integer> list=new ArrayList<>();
         Scanner input=new Scanner(System.in);

@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class challenge60 {
+public class NumberGuessingGame {
     static void main() {
         Scanner input=new Scanner(System.in);
         Random random=new Random();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge20 {
+public class AgeChecker {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter your age");

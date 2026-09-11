@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge2126 {
+public class BitwiseOperators {
     static void main() {
         Scanner input =new Scanner(System.in);
         System.out.println("Enter the first number");

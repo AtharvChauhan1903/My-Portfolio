@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge69 {
+public class RecursivePalindrome {
 
 
     static int countDigits(int num) {

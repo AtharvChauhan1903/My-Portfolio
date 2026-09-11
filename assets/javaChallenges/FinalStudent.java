@@ -1,9 +1,9 @@
-public class challenge76 {
+public class FinalStudent {
     private final String name;
     private final int age;
     private final int AssignedRollNumber;
     private final float height;
-    public challenge76(String name,int age,int assignedRollNumber,float height){
+    public FinalStudent(String name,int age,int assignedRollNumber,float height){
         this.age=age;
         this.height=height;
         this.AssignedRollNumber=assignedRollNumber;
@@ -16,7 +16,7 @@ public class challenge76 {
     }
 
     static void main() {
-     challenge76 st1=new challenge76("Atharv",20,7,(float)189.5);
+     FinalStudent st1=new FinalStudent("Atharv",20,7,(float)189.5);
         System.out.println(st1.toString());
     }
 }

@@ -1,7 +1,7 @@
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-class challenge10 {
+class Perimeter {
     static void main() {
         System.out.println("Enter the four sides of rectangle:");
        Scanner input=new Scanner(System.in);

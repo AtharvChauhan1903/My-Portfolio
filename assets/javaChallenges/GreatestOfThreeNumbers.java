@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class challenge17 {
+class GreatestOfThreeNumbers {
     static void main() {
         Scanner input=new Scanner(System.in);
         int num1,num2,num3;

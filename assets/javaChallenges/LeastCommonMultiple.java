@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge32 {
+public class LeastCommonMultiple {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter number");

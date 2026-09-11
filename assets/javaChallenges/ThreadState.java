@@ -1,4 +1,4 @@
-public class challenge100 extends Thread {
+public class ThreadState extends Thread {
     public void run(){
 
            try {

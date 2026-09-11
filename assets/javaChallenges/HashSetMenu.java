@@ -2,7 +2,7 @@
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class challenge95 {
+public class HashSetMenu {
     static void main() {
         HashSet<String> Name = new HashSet<>();
         Scanner input = new Scanner(System.in);

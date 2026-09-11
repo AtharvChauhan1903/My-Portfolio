@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge48 {
+public class TwoDimensionalArraySearch {
     static void main() {
         int[][] arr=arrayutilities.array2dcreation();
         Scanner input=new Scanner(System.in);

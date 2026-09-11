@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge72 {
+public class CircleDemo {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the radius of the circle");

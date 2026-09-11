@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challege19 {
+public class Grading {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter your percentage");

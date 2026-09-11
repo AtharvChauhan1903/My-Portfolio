@@ -1,4 +1,4 @@
-public class challenge49 {
+public class TwoDimensionalArraySumAverage {
     static void main() {
         int[][]arr=arrayutilities.array2dcreation();
         int totalelements=(arr.length)*(arr[0].length);

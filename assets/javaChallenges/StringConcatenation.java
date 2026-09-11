@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class challenge89 {
+public class StringConcatenation {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter how many inputs you want");

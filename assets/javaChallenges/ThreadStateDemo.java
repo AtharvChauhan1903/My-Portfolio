@@ -1,6 +1,6 @@
-public class challenge100copy {
+public class ThreadStateDemo {
     static void main() throws InterruptedException {
-        challenge100 t1=new challenge100();
+        ThreadState t1=new ThreadState();
         System.out.println(t1.getState());
         t1.setName("Thread 1");
 

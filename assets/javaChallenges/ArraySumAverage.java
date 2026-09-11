@@ -1,4 +1,4 @@
-public class challenge40 {
+public class ArraySumAverage {
     static void main() {
         int[] arr=arrayutilities.arraycreation();
         int sum=0;

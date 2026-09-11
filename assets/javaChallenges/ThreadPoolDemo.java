@@ -3,7 +3,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Challenge104 {
+public class ThreadPoolDemo {
 
     static void main() {
         ExecutorService exe= Executors.newFixedThreadPool(3);

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class challenge75 {
+public class ArrayToString {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("How long do you want your Array to be");

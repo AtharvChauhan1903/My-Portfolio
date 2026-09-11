@@ -2,7 +2,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Challenge103 {
+public class SingleThreadExecutorDemo {
     static void main() {
         ExecutorService exe= Executors.newSingleThreadExecutor();
         Runnable Task=()->{

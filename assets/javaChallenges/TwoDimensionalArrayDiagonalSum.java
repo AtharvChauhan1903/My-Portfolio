@@ -1,4 +1,4 @@
-public class challenge50 {
+public class TwoDimensionalArrayDiagonalSum {
     static void main() {
         int[][] arr=arrayutilities.array2dcreation();
         int sum=0;

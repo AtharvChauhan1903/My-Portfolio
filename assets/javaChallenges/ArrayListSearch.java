@@ -1,11 +1,11 @@
-package challenge92;
+package ArrayListSearch;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class challenge92 {
+public class ArrayListSearch {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the size of the array you want");

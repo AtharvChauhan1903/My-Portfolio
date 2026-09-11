@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class challenge16 {
+class OddEven {
     static void main() {
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the number");

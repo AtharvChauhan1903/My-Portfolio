@@ -91,7 +91,8 @@ main > h1::after {
     content: '';
 }
 
-main > h2 {
+main > h2,
+.project-content > h2 {
     margin: 2rem 0 0.75rem;
     padding-left: 1rem;
     color: var(--accent);
@@ -109,7 +110,9 @@ main > p {
 }
 
 main > ul,
-main > ol {
+main > ol,
+.project-content > ul,
+.project-content > ol {
     margin: 1rem 0 2rem;
     padding: 1.25rem 1.5rem 1.25rem 2.75rem;
     background: linear-gradient(145deg, var(--surface-light), var(--surface));
@@ -119,20 +122,26 @@ main > ol {
 }
 
 main > ul li,
-main > ol li {
+main > ol li,
+.project-content > ul li,
+.project-content > ol li {
     margin: 0.55rem 0;
     padding-left: 0.35rem;
     color: var(--muted);
 }
 
 main > ul li::marker,
-main > ol li::marker {
+main > ol li::marker,
+.project-content > ul li::marker,
+.project-content > ol li::marker {
     color: var(--accent);
     font-weight: 700;
 }
 
 main > ul a,
-main > ol a {
+main > ol a,
+.project-content > ul a,
+.project-content > ol a {
     color: var(--text);
     text-decoration-color: rgba(103, 232, 249, 0.4);
     text-underline-offset: 0.2em;
@@ -140,7 +149,9 @@ main > ol a {
 }
 
 main > ul a:hover,
-main > ol a:hover {
+main > ol a:hover,
+.project-content > ul a:hover,
+.project-content > ol a:hover {
     color: var(--accent);
 }
 
@@ -156,23 +167,91 @@ main > h2 + ul {
 }
 
 /* Projects page */
-#PracticeQuestions + ul {
+.projects-page {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+}
+
+.projects-page > h1 {
+    grid-column: 1 / -1;
+}
+
+.project-shortcuts {
+    position: sticky;
+    top: 6rem;
+    grid-column: 1;
+    padding: 1rem;
+    background: linear-gradient(145deg, var(--surface-light), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.project-shortcuts p {
+    margin-bottom: 0.7rem;
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+.project-shortcuts nav {
+    position: static;
+    display: grid;
+    gap: 0.35rem;
+    min-height: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.project-shortcuts nav a {
+    padding: 0.3rem 0.45rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.project-shortcuts nav a:hover,
+.project-shortcuts nav a:focus {
+    color: var(--accent);
+    transform: none;
+}
+
+.project-content {
+    grid-column: 2;
+}
+
+.project-content > h2 {
+    scroll-margin-top: 6rem;
+}
+
+.project-content > h2:first-of-type {
+    margin-top: 0;
+}
+
+.project-content > h2 + ul {
+    margin-top: 0;
     max-height: none;
     columns: 2 20rem;
     column-gap: 3rem;
 }
 
-#PracticeQuestions + ul > li {
+.project-content > h2 + ul > li {
     break-inside: avoid;
     margin-bottom: 0.85rem;
 }
 
-#PracticeQuestions + ul ul {
+.project-content > h2 + ul ul {
     margin: 0.35rem 0 0.5rem;
     padding-left: 1.5rem;
 }
 
-#PracticeQuestions + ul ul li {
+.project-content > h2 + ul ul li {
     margin: 0.25rem 0;
     font-size: 0.94rem;
 }
@@ -333,12 +412,40 @@ footer > ul {
         margin: 2.5rem auto 3rem;
     }
 
+    .projects-page {
+        display: block;
+    }
+
     main > h1 {
         margin-bottom: 2rem;
         font-size: clamp(2.8rem, 15vw, 4.5rem);
     }
 
-    #PracticeQuestions + ul {
+    .project-shortcuts {
+        position: static;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+
+    .project-shortcuts nav {
+        display: flex;
+        width: max-content;
+        gap: 0.35rem;
+    }
+
+    .project-shortcuts nav a {
+        white-space: nowrap;
+    }
+
+    .project-content {
+        grid-column: auto;
+    }
+
+    .project-content > h2:first-of-type {
+        margin-top: 2rem;
+    }
+
+    .project-content > h2 + ul {
         columns: 1;
     }
 

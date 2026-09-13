@@ -34,7 +34,8 @@ body {
     line-height: 1.7;
 }
 
-header > nav {
+header > nav,
+.site-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -53,7 +54,8 @@ header > nav {
     backdrop-filter: blur(16px);
 }
 
-header > nav a {
+header > nav a,
+.site-nav a {
     color: #ffffff;
     font-size: 0.95rem;
     font-weight: 600;
@@ -63,7 +65,9 @@ header > nav a {
 }
 
 header > nav a:hover,
-header > nav a:focus {
+header > nav a:focus,
+.site-nav a:hover,
+.site-nav a:focus {
     color: var(--accent);
     transform: translateY(-2px);
 }
@@ -398,12 +402,14 @@ footer > ul {
         padding-top: 8.5rem;
     }
 
-    header > nav {
+    header > nav,
+    .site-nav {
         gap: 0.35rem 0.9rem;
         padding: 0.85rem 0.75rem;
     }
 
-    header > nav a {
+    header > nav a,
+    .site-nav a {
         font-size: 0.85rem;
     }
 

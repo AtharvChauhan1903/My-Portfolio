@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors | Portfolio</title>
+    <link rel="stylesheet" href="../css files/RockPapperScissor.css">
+</head>
+<body>
+    <header>
+         <nav class="site-nav">
+            <a href="../index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Skills.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+    <main class="game-page">
+        <section class="game-intro">
+            <p class="eyebrow">Quick match</p>
+            <h1>Rock Paper Scissors</h1>
+            <p>Choose your move and beat the computer. Every round counts, even when neither player scores.</p>
+        </section>
+
+        <section class="game-card" aria-labelledby="game-heading">
+            <div class="game-card-header">
+                <div>
+                    <p class="eyebrow">The arena</p>
+                    <h2 id="game-heading">Set your match</h2>
+                </div>
+                <p id="game-status" class="game-status" role="status">Enter the number of rounds to begin.</p>
+            </div>
+
+            <form id="round-form" class="round-form">
+                <label for="round-count">How many rounds?</label>
+                <div class="round-form-row">
+                    <input id="round-count" name="round-count" type="number" min="1" max="99" value="3" required>
+                    <button class="primary-button" type="submit">Start game</button>
+                </div>
+                <p class="form-message" id="form-message" aria-live="polite"></p>
+            </form>
+
+            <div class="mode-switcher">
+                <div>
+                    <span class="score-label">Current mode</span>
+                    <strong id="mode-name">Normal rules</strong>
+                </div>
+                <button class="mode-button" id="mode-toggle" type="button">Switch to reverse mode</button>
+            </div>
+
+            <section class="rules-panel" aria-labelledby="rules-heading">
+                <div class="rules-heading-row">
+                    <div>
+                        <p class="eyebrow">Know the matchup</p>
+                        <h3 id="rules-heading">Game rules</h3>
+                    </div>
+                    <span class="rules-live-label" id="rules-live-label">Playing now</span>
+                </div>
+                <div class="rules-grid">
+                    <article class="rule-card" id="normal-rules">
+                        <h4>Normal mode</h4>
+                        <ul>
+                            <li><strong>Rock</strong> beats Scissors</li>
+                            <li><strong>Paper</strong> beats Rock</li>
+                            <li><strong>Scissors</strong> beats Paper</li>
+                        </ul>
+                    </article>
+                    <article class="rule-card" id="reverse-rules">
+                        <h4>Reverse mode</h4>
+                        <ul>
+                            <li><strong>Rock</strong> beats Paper</li>
+                            <li><strong>Paper</strong> beats Scissors</li>
+                            <li><strong>Scissors</strong> beats Rock</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <div class="scoreboard" aria-label="Game score">
+                <div class="score-panel">
+                    <span class="score-label">You</span>
+                    <strong id="player-score">0</strong>
+                </div>
+                <div class="rounds-panel">
+                    <span class="score-label">Rounds left</span>
+                    <strong id="rounds-left">-</strong>
+                </div>
+                <div class="score-panel">
+                    <span class="score-label">Computer</span>
+                    <strong id="computer-score">0</strong>
+                </div>
+            </div>
+
+            <div class="matchup" id="matchup" aria-live="polite">
+                <div class="revealed-choice player-revealed-choice">
+                    <span class="choice-label">Your move</span>
+                    <span class="reveal-icon hand-icon" id="player-icon" aria-hidden="true">?</span>
+                    <strong id="player-choice">Waiting</strong>
+                </div>
+                <span class="versus" aria-hidden="true">VS</span>
+                <div class="revealed-choice computer-revealed-choice">
+                    <span class="choice-label">Computer move</span>
+                    <span class="reveal-icon hand-icon" id="computer-icon" aria-hidden="true">?</span>
+                    <strong id="computer-choice">Waiting</strong>
+                </div>
+            </div>
+
+            <div class="choices" aria-label="Choose your move">
+                <button class="choice-button" type="button" data-choice="rock" disabled>
+                    <span class="choice-icon" aria-hidden="true">●</span>
+                    <span>Rock</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="paper" disabled>
+                    <span class="choice-icon" aria-hidden="true">▤</span>
+                    <span>Paper</span>
+                </button>
+                <button class="choice-button" type="button" data-choice="scissors" disabled>
+                    <span class="choice-icon" aria-hidden="true">✂</span>
+                    <span>Scissors</span>
+                </button>
+            </div>
+
+            <p id="result-message" class="result-message" role="status">Start a game to make your move.</p>
+        </section>
+    </main>
+     <footer>
+        <h2>Contact Me</h2>
+        <ul id="Contact-me">
+            <li><a href="Contact.html">Open Contact Me page</a></li>
+            <li>Email: <a href="mailto:athnik1234@gmail.com">athnik1234@gmail.com</a></li>
+        </ul>
+    </footer>
+    <script src="../javascript files/RockPapperScissors.js"></script>
+</body>
+</html>

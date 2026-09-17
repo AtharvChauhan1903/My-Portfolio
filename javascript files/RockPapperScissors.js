@@ -100,7 +100,9 @@ function playSound(soundName) {
 		pointLoss: [[330, 0, 0.16], [247, 0.13, 0.22]],
 		tie: [[392, 0, 0.18], [392, 0.2, 0.18]],
 		gameWin: [[523, 0, 0.16], [659, 0.14, 0.16], [784, 0.28, 0.32]],
-		gameLoss: [[330, 0, 0.2], [262, 0.18, 0.2], [196, 0.36, 0.35]]
+		gameLoss: [[330, 0, 0.2], [262, 0.18, 0.2], [196, 0.36, 0.35]],
+		dominantWin: [[523, 0, 0.14], [659, 0.12, 0.14], [784, 0.24, 0.14], [1047, 0.38, 0.5]],
+		dominantLoss: [[392, 0, 0.18], [311, 0.16, 0.18], [233, 0.32, 0.18], [175, 0.48, 0.5]]
 	};
 
 	(sounds[soundName] || []).forEach(([frequency, offset, duration]) => {
@@ -165,16 +167,22 @@ function finishGame() {
 		updateScoreboard();
 		gameStatus.textContent = 'Game point: first player to score wins.';
 		resultMessage.textContent = 'The match is tied. Choose a move for the game point.';
+		setChoiceButtons(true);
 		return;
 	}
 
-	const winner = game.playerScore > game.computerScore ? 'You win!' : 'Computer wins!';
+	const playerWon = game.playerScore > game.computerScore;
+	const dominantVictory = game.playerScore === 0 || game.computerScore === 0;
+	const winner = playerWon ? 'You win!' : 'Computer wins!';
+	const victoryMessage = dominantVictory
+		? `${playerWon ? 'Overwhelming victory!' : 'Computer domination!'}`
+		: winner;
 	game.finished = true;
 	gameStatus.textContent = 'Match complete.';
-	resultMessage.textContent = `${winner} Final score: ${game.playerScore} - ${game.computerScore}.`;
+	resultMessage.textContent = `${victoryMessage} Final score: ${game.playerScore} - ${game.computerScore}.`;
 	setChoiceButtons(false);
-	playSound(game.playerScore > game.computerScore ? 'gameWin' : 'gameLoss');
-	window.alert(`${winner} Final score: ${game.playerScore} - ${game.computerScore}.`);
+	playSound(dominantVictory ? (playerWon ? 'dominantWin' : 'dominantLoss') : (playerWon ? 'gameWin' : 'gameLoss'));
+	window.alert(`${victoryMessage} ${winner} Final score: ${game.playerScore} - ${game.computerScore}.`);
 }
 
 function resolveRound(playerChoice, computerChoice, roundResult) {

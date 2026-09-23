@@ -260,6 +260,73 @@ main > h2 + ul {
     font-size: 0.94rem;
 }
 
+.java-challenge-item > .java-challenge-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.45rem;
+}
+
+.java-output-button {
+    padding: 0.35rem 0.65rem;
+    color: var(--background);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.java-output-button:hover,
+.java-output-button:focus-visible {
+    color: var(--text);
+    background: transparent;
+    transform: translateY(-1px);
+}
+
+.java-output-panel {
+    width: min(100%, 38rem);
+    margin-top: 0.7rem;
+    padding: 0.85rem 1rem;
+    background: rgba(7, 17, 31, 0.72);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 5px;
+}
+
+.java-output-panel[hidden] {
+    display: none;
+}
+
+.java-output-panel p {
+    margin-bottom: 0.55rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.java-output-panel p:last-of-type {
+    margin-bottom: 0;
+}
+
+.java-output-panel strong {
+    color: var(--text);
+}
+
+.java-output-panel pre {
+    overflow-x: auto;
+    margin: 0.65rem 0 0;
+    padding: 0.75rem;
+    color: #d9f99d;
+    background: #050b14;
+    border-radius: 4px;
+    font: 0.8rem/1.55 'Space Mono', monospace;
+    white-space: pre-wrap;
+}
+
 /* Contact page */
 #intro_para {
     max-width: 42rem;

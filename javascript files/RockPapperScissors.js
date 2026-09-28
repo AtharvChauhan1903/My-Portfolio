@@ -3,6 +3,7 @@ const roundCountInput = document.querySelector('#round-count');
 const formMessage = document.querySelector('#form-message');
 const modeNameElement = document.querySelector('#mode-name');
 const modeToggleButton = document.querySelector('#mode-toggle');
+const resetGameButton = document.querySelector('#reset-game');
 const rulesLiveLabel = document.querySelector('#rules-live-label');
 const normalRulesElement = document.querySelector('#normal-rules');
 const reverseRulesElement = document.querySelector('#reverse-rules');
@@ -252,10 +253,7 @@ function playRound(playerChoice) {
 	}, 900);
 }
 
-roundForm.addEventListener('submit', (event) => {
-	event.preventDefault();
-	const requestedRounds = Number(roundCountInput.value);
-
+function beginMatch(requestedRounds) {
 	if (!Number.isInteger(requestedRounds) || requestedRounds < 1 || requestedRounds > 99) {
 		formMessage.textContent = 'Choose a whole number between 1 and 99.';
 		return;
@@ -278,6 +276,18 @@ roundForm.addEventListener('submit', (event) => {
 	gameStatus.textContent = `${requestedRounds} round${requestedRounds === 1 ? '' : 's'} ready.`;
 	updateScoreboard();
 	setChoiceButtons(true);
+}
+
+roundForm.addEventListener('submit', (event) => {
+	event.preventDefault();
+	const requestedRounds = Number(roundCountInput.value);
+	beginMatch(requestedRounds);
+});
+
+resetGameButton.addEventListener('click', () => {
+	const requestedRounds = Number(roundCountInput.value);
+	beginMatch(requestedRounds);
+	formMessage.textContent = 'Match reset. Ready for a fresh start.';
 });
 
 choiceButtons.forEach((button) => {

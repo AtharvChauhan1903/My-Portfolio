@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Calculator</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
     <link rel="stylesheet" href="../css files/pages.css">
-   <link rel="stylesheet" href="../css files/calculator.css">
+    <link rel="stylesheet" href="../css files/calculator.css">
 </head>
 <body>
     <header>
-         <nav class="site-nav">
+        <nav class="site-nav">
             <a href="../index.html">Home</a>
             <a href="About.html">About</a>
             <a href="Skills.html">Skills</a>
@@ -18,37 +19,140 @@
         </nav>
     </header>
     <main class="calculator-page">
+        <section id="calculator" aria-label="Calculator">
+            <h1>Calculator</h1>
+            <div class="mode-switcher" role="group" aria-label="Calculator mode">
+                <button class="mode-button" type="button" data-mode="standard" aria-pressed="true">Standard</button>
+                <button class="mode-button" type="button" data-mode="scientific" aria-pressed="false">Scientific</button>
+                <button class="mode-button" type="button" data-mode="programmer" aria-pressed="false">Programmer</button>
+                <button class="mode-button" type="button" data-mode="date" aria-pressed="false">Date</button>
+            </div>
+            <div id="expression-calculator">
+                <div class="display-options">
+                    <label class="calculator-label" for="display">Expression</label>
+                    <label class="angle-control" id="angle-control" hidden>
+                        Angle
+                        <select id="angle-unit" aria-label="Angle unit">
+                            <option value="deg">Degrees</option>
+                            <option value="rad">Radians</option>
+                        </select>
+                    </label>
+                </div>
+                <input
+                    type="text"
+                    id="display"
+                    aria-label="Calculator expression"
+                    aria-describedby="calculator-message"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    inputmode="decimal"
+                    placeholder="0"
+                >
+                <p id="calculator-message" role="status" aria-live="polite">Use your keyboard or the buttons.</p>
+                <div class="programmer-options" id="programmer-options" hidden>
+                    <div class="base-selector" role="radiogroup" aria-label="Number base">
+                        <label><input type="radio" name="number-base" value="16"> HEX</label>
+                        <label><input type="radio" name="number-base" value="10" checked> DEC</label>
+                        <label><input type="radio" name="number-base" value="8"> OCT</label>
+                        <label><input type="radio" name="number-base" value="2"> BIN</label>
+                    </div>
+                    <p id="base-results" aria-live="polite"></p>
+                </div>
+                <div class="button_container" id="keypad">
+                    <button class="button utility-button" type="button" data-action="clear" aria-label="Clear">AC</button>
+                    <button class="button utility-button" type="button" data-action="backspace" aria-label="Backspace">DEL</button>
+                    <button class="button operator-button standard-key" type="button" data-value="(" aria-label="Open parenthesis">(</button>
+                    <button class="button operator-button standard-key" type="button" data-value=")" aria-label="Close parenthesis">)</button>
+                    <button class="button standard-key" type="button" data-value="%">%</button>
 
-    <div id="calculator">
-        <input type="text" id="display" >
-        <div class="button_container">
-            <button class="button" onclick="currentDisplay=``; document.querySelector(`#display`).value=currentDisplay;">C</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`1`; document.querySelector(`#display`).value=currentDisplay;">1</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`2`; document.querySelector(`#display`).value=currentDisplay;">2</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`+`; document.querySelector(`#display`).value=currentDisplay;">+</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`3`; document.querySelector(`#display`).value=currentDisplay;">3</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`4`; document.querySelector(`#display`).value=currentDisplay;">4</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`-`; document.querySelector(`#display`).value=currentDisplay;">-</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`5`; document.querySelector(`#display`).value=currentDisplay;">5</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`6`; document.querySelector(`#display`).value=currentDisplay;">6</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`*`; document.querySelector(`#display`).value=currentDisplay;">*</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`7`; document.querySelector(`#display`).value=currentDisplay;">7</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`8`; document.querySelector(`#display`).value=currentDisplay;">8</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`/`; document.querySelector(`#display`).value=currentDisplay;">/</button>
-            <button class="button" onclick="
-            let result=eval(currentDisplay); currentDisplay=result; document.querySelector(`#display`).value=currentDisplay;">=</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`9`; document.querySelector(`#display`).value=currentDisplay;">9</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`0`; document.querySelector(`#display`).value=currentDisplay;">0</button>
-            <button class="button" onclick="currentDisplay=currentDisplay+`.`; document.querySelector(`#display`).value=currentDisplay;">.</button>
-            
-            
-        </div>
-    </div>
+                    <button class="button digit-key" type="button" data-digit="7">7</button>
+                    <button class="button digit-key" type="button" data-digit="8">8</button>
+                    <button class="button digit-key" type="button" data-digit="9">9</button>
+                    <button class="button operator-button standard-key programmer-key" type="button" data-value="/">÷</button>
+
+                    <button class="button digit-key" type="button" data-digit="4">4</button>
+                    <button class="button digit-key" type="button" data-digit="5">5</button>
+                    <button class="button digit-key" type="button" data-digit="6">6</button>
+                    <button class="button operator-button standard-key programmer-key" type="button" data-value="*">×</button>
+
+                    <button class="button digit-key" type="button" data-digit="1">1</button>
+                    <button class="button digit-key" type="button" data-digit="2">2</button>
+                    <button class="button digit-key" type="button" data-digit="3">3</button>
+                    <button class="button operator-button standard-key programmer-key" type="button" data-value="-">−</button>
+
+                    <button class="button operator-button standard-key" type="button" data-action="negate" aria-label="Change sign">±</button>
+                    <button class="button digit-key" type="button" data-digit="0">0</button>
+                    <button class="button standard-key" type="button" data-value=".">.</button>
+                    <button class="button operator-button standard-key programmer-key" type="button" data-value="+">+</button>
+
+                    <button class="button scientific-key" type="button" data-value="sin(">sin</button>
+                    <button class="button scientific-key" type="button" data-value="cos(">cos</button>
+                    <button class="button scientific-key" type="button" data-value="tan(">tan</button>
+                    <button class="button scientific-key" type="button" data-value="sqrt(">√</button>
+                    <button class="button scientific-key" type="button" data-value="ln(">ln</button>
+                    <button class="button scientific-key" type="button" data-value="log(">log</button>
+                    <button class="button scientific-key" type="button" data-value="asin(">asin</button>
+                    <button class="button scientific-key" type="button" data-value="acos(">acos</button>
+                    <button class="button scientific-key" type="button" data-value="atan(">atan</button>
+                    <button class="button scientific-key" type="button" data-value="cbrt(">∛</button>
+                    <button class="button scientific-key" type="button" data-value="abs(">abs</button>
+                    <button class="button scientific-key" type="button" data-value="exp(">eˣ</button>
+                    <button class="button scientific-key" type="button" data-value="^">xʸ</button>
+                    <button class="button scientific-key" type="button" data-value="!">x!</button>
+                    <button class="button scientific-key" type="button" data-value="π">π</button>
+                    <button class="button scientific-key" type="button" data-value="e">e</button>
+
+                    <button class="button programmer-key" type="button" data-digit="A">A</button>
+                    <button class="button programmer-key" type="button" data-digit="B">B</button>
+                    <button class="button programmer-key" type="button" data-digit="C">C</button>
+                    <button class="button programmer-key" type="button" data-digit="D">D</button>
+                    <button class="button programmer-key" type="button" data-digit="E">E</button>
+                    <button class="button programmer-key" type="button" data-digit="F">F</button>
+                    <button class="button programmer-key" type="button" data-value="&">AND</button>
+                    <button class="button programmer-key" type="button" data-value="|">OR</button>
+                    <button class="button programmer-key" type="button" data-value="^">XOR</button>
+                    <button class="button programmer-key" type="button" data-value="~">NOT</button>
+                    <button class="button programmer-key" type="button" data-value="<<">Lsh</button>
+                    <button class="button programmer-key" type="button" data-value=">>">Rsh</button>
+
+                    <button class="button equals-button" type="button" data-action="calculate">=</button>
+                </div>
+            </div>
+            <section id="date-calculator" hidden aria-label="Date calculator">
+                <div class="date-mode-switcher" role="group" aria-label="Date calculation type">
+                    <button type="button" data-date-mode="difference" aria-pressed="true">Difference between dates</button>
+                    <button type="button" data-date-mode="add" aria-pressed="false">Add or subtract time</button>
+                </div>
+                <div id="date-difference">
+                    <label class="calculator-label" for="date-start">From</label>
+                    <input type="date" id="date-start">
+                    <label class="calculator-label" for="date-end">To</label>
+                    <input type="date" id="date-end">
+                    <button class="button equals-button date-calculate" type="button" data-date-action="difference">Calculate difference</button>
+                </div>
+                <div id="date-addition" hidden>
+                    <label class="calculator-label" for="date-base">Date</label>
+                    <input type="date" id="date-base">
+                    <label class="calculator-label" for="date-amount">Amount</label>
+                    <div class="date-amount-row">
+                        <input type="number" id="date-amount" value="1" step="1">
+                        <select id="date-unit" aria-label="Time unit">
+                            <option value="days">Days</option>
+                            <option value="weeks">Weeks</option>
+                            <option value="months">Months</option>
+                            <option value="years">Years</option>
+                        </select>
+                    </div>
+                    <div class="date-action-row">
+                        <button class="button" type="button" data-date-action="subtract">Subtract</button>
+                        <button class="button" type="button" data-date-action="add">Add</button>
+                    </div>
+                </div>
+                <p id="date-result" role="status" aria-live="polite">Choose dates to calculate.</p>
+            </section>
+        </section>
     </main>
-    <script>
-     let currentDisplay=``;
-     document.querySelector(`#display`).value=currentDisplay;   
-    </script>
     <footer>
         <h2>Contact Me</h2>
         <ul id="Contact-me">
@@ -56,5 +160,6 @@
             <li>Email: <a href="mailto:athnik1234@gmail.com">athnik1234@gmail.com</a></li>
         </ul>
     </footer>
+    <script src="../javascript files/calculator.js"></script>
 </body>
 </html>

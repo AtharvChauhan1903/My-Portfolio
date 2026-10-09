@@ -1,40 +1,247 @@
-#calculator{
+.calculator-page {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+#calculator {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    padding: 10px 0;
-    border:1px solid rgb(187,183,183);
-    border-radius: 5px;
-    width: min(40vw, 420px);
-    min-height: 62vh;
+    width: min(100%, 620px);
+    padding: 1.25rem;
+    border: 1px solid rgb(187, 183, 183);
+    border-radius: 14px;
     background: linear-gradient(145deg, #14263d, #101e31);
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
 }
-#display{
-    margin: 10px;
-    width: calc(100% - 20px);
-    min-height: 3.5rem;
-    font-size: 25px;
-    box-sizing: border-box;
-}
-.button_container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-content: center;
-    flex: 1;
-    gap: 10px;
-    margin: 10px;
-}
-.button{
-    width: 100%;
-    min-height: 3.25rem;
-    margin: 0;
-    font-size: 1.1rem;
+
+#calculator h1 {
+    margin: 0 0 1rem;
+    color: #f8fafc;
+    font-size: 1.6rem;
 }
 
-@media (max-width: 700px) {
+.mode-switcher,
+.date-mode-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.mode-button,
+.date-mode-switcher button {
+    flex: 1 1 auto;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #38506b;
+    border-radius: 7px;
+    background: #203650;
+    color: #e2e8f0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+.mode-button[aria-pressed="true"],
+.date-mode-switcher button[aria-pressed="true"] {
+    border-color: #22d3ee;
+    background: #124e62;
+    color: #fff;
+}
+
+.display-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.calculator-label {
+    display: block;
+    margin: 0.7rem 0 0.4rem;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+.display-options .calculator-label {
+    margin-top: 0;
+}
+
+.angle-control {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+#display,
+#date-calculator input,
+#date-calculator select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.8rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #49617d;
+    border-radius: 7px;
+    background: #091321;
+    color: #f8fafc;
+    font: inherit;
+}
+
+#display {
+    min-height: 4.5rem;
+    font-size: 1.75rem;
+    text-align: right;
+}
+
+#display:focus-visible,
+#date-calculator input:focus-visible,
+#date-calculator select:focus-visible,
+.button:focus-visible,
+.mode-button:focus-visible,
+.date-mode-switcher button:focus-visible {
+    outline: 3px solid #67e8f9;
+    outline-offset: 2px;
+}
+
+#calculator-message,
+#date-result {
+    min-height: 1.25rem;
+    margin: 0.5rem 0 0;
+    color: #cbd5e1;
+    font-size: 0.8rem;
+}
+
+.programmer-options {
+    margin: 0.8rem 0;
+    padding: 0.75rem;
+    border: 1px solid #38506b;
+    border-radius: 8px;
+    background: rgba(9, 19, 33, 0.55);
+}
+
+.base-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.base-selector label {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+}
+
+.base-selector input {
+    accent-color: #22d3ee;
+}
+
+#base-results {
+    margin: 0.75rem 0 0;
+    overflow-wrap: anywhere;
+    color: #a5f3fc;
+    font-size: 0.8rem;
+}
+
+.button_container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.button {
+    min-height: 3.3rem;
+    padding: 0.4rem;
+    border: 1px solid #38506b;
+    border-radius: 8px;
+    background: #203650;
+    color: #f8fafc;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.05rem;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+    background: #2b4562;
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.utility-button {
+    background: #344a63;
+}
+
+.operator-button {
+    background: #124e62;
+}
+
+.operator-button:hover {
+    background: #17677d;
+}
+
+.equals-button {
+    grid-column: 1 / -1;
+    min-height: 3.25rem;
+    border-color: #0891b2;
+    background: #0e7490;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.equals-button:hover {
+    background: #0891b2;
+}
+
+.date-mode-switcher {
+    margin: 0.5rem 0 1rem;
+}
+
+#date-calculator > input[type="date"] {
+    margin-bottom: 0.6rem;
+}
+
+.date-amount-row,
+.date-action-row {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.date-amount-row select {
+    max-width: 45%;
+}
+
+.date-action-row {
+    margin-top: 0.75rem;
+}
+
+.date-action-row .button {
+    flex: 1;
+}
+
+.date-calculate {
+    margin-top: 0.75rem;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 480px) {
     #calculator {
-        width: min(92vw, 420px);
-        min-height: 60vh;
+        padding: 1rem;
+    }
+
+    .button_container {
+        gap: 0.45rem;
+    }
+
+    .button {
+        min-height: 3rem;
+        font-size: 0.95rem;
     }
 }

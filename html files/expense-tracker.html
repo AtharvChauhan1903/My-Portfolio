@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4ed">
+    <meta name="description" content="Keep an eye on your spending, income, and monthly budget.">
+    <title>Expense &amp; Budget Tracker | Atharv Chauhan</title>
+    <link rel="stylesheet" href="../css files/pages.css">
+    <link rel="stylesheet" href="../css files/expense-tracker.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Skills.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="tracker-page">
+        <section class="tracker-hero" aria-labelledby="page-title">
+            <div>
+                <p class="tracker-eyebrow">A little more clarity, every month</p>
+                <h1 id="page-title">Your money,<br>in good shape.</h1>
+                <p class="tracker-intro">Track what comes in, what goes out, and how much room is left in your budget.</p>
+            </div>
+            <label class="month-picker" for="selected-month">
+                <span>Month</span>
+                <input id="selected-month" type="month">
+            </label>
+        </section>
+
+        <p id="tracker-status" class="tracker-status" role="status" aria-live="polite"></p>
+
+        <section class="summary-grid" aria-label="Monthly overview">
+            <article class="summary-card spent-card">
+                <span class="summary-label">Spent this month</span>
+                <strong id="monthly-spent">$0.00</strong>
+                <span class="summary-note">Your recorded expenses</span>
+            </article>
+            <article class="summary-card income-card">
+                <span class="summary-label">Income this month</span>
+                <strong id="monthly-income">$0.00</strong>
+                <span class="summary-note">Your recorded income</span>
+            </article>
+            <article class="summary-card remaining-card">
+                <span class="summary-label">Budget remaining</span>
+                <strong id="budget-remaining">$0.00</strong>
+                <span id="remaining-note" class="summary-note">Set a monthly budget to get started</span>
+            </article>
+        </section>
+
+        <section class="budget-panel" aria-labelledby="budget-title">
+            <div class="budget-heading">
+                <div>
+                    <p class="tracker-eyebrow">Your monthly limit</p>
+                    <h2 id="budget-title">Budget progress</h2>
+                </div>
+                <div class="budget-actions">
+                    <label class="currency-picker" for="currency-select">
+                        <span>Currency</span>
+                        <select id="currency-select">
+                            <option value="INR">INR (₹)</option>
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
+                        </select>
+                    </label>
+                    <button id="reset-month" class="reset-button" type="button">Reset month</button>
+                </div>
+            </div>
+            <p class="currency-note">Choose the currency for display. Totals use the exchange rates below.</p>
+            <details class="exchange-panel">
+                <summary>Exchange rates</summary>
+                <p class="exchange-note">Enter how many units equal 1 USD, then save the rates.</p>
+                <div class="exchange-grid">
+                    <label for="rate-usd">1 USD = USD
+                        <input id="rate-usd" type="number" min="0.0001" step="0.0001" value="1">
+                    </label>
+                    <label for="rate-inr">1 USD = INR
+                        <input id="rate-inr" type="number" min="0.0001" step="0.0001" value="83">
+                    </label>
+                    <label for="rate-eur">1 USD = EUR
+                        <input id="rate-eur" type="number" min="0.0001" step="0.0001" value="0.92">
+                    </label>
+                    <label for="rate-gbp">1 USD = GBP
+                        <input id="rate-gbp" type="number" min="0.0001" step="0.0001" value="0.79">
+                    </label>
+                </div>
+                <button id="save-rates" class="save-rates-button" type="button">Save exchange rates</button>
+            </details>
+            <div class="budget-edit">
+                <label for="budget-input">Monthly budget</label>
+                <div class="budget-input-row">
+                    <input id="budget-input" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="e.g. 30000">
+                    <button id="save-budget" type="button">Save budget</button>
+                </div>
+            </div>
+            <div class="progress-labels">
+                <span id="budget-spent-label">₹0 spent</span>
+                <span id="budget-total-label">of ₹0</span>
+            </div>
+            <div
+                id="budget-progress"
+                class="progress-track"
+                role="progressbar"
+                aria-label="Monthly budget used"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <span id="budget-progress-fill"></span>
+            </div>
+            <p id="budget-message" class="budget-message">Add a budget above to see your progress.</p>
+        </section>
+
+        <div class="tracker-columns">
+            <section class="transaction-form-panel" aria-labelledby="add-transaction-title">
+                <p class="tracker-eyebrow">Keep it up to date</p>
+                <h2 id="add-transaction-title">Add a transaction</h2>
+                <form id="transaction-form">
+                    <label for="transaction-type">This is</label>
+                    <select id="transaction-type" name="type">
+                        <option value="expense">An expense</option>
+                        <option value="income">Income</option>
+                    </select>
+
+                    <label for="transaction-description">What was it for?</label>
+                    <input id="transaction-description" name="description" type="text" maxlength="80" placeholder="e.g. Weekly groceries" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="transaction-amount">Amount</label>
+                            <input id="transaction-amount" name="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" required>
+                        </div>
+                        <div>
+                            <label for="transaction-currency">Currency</label>
+                            <select id="transaction-currency" name="currency">
+                                <option value="INR">INR (₹)</option>
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div>
+                            <label for="transaction-category">Category</label>
+                            <select id="transaction-category" name="category">
+                                <option>Food</option>
+                                <option>Transport</option>
+                                <option>Shopping</option>
+                                <option>Bills</option>
+                                <option>Health</option>
+                                <option>Entertainment</option>
+                                <option>Education</option>
+                                <option>Salary</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="transaction-date">Date</label>
+                    <input id="transaction-date" name="date" type="date" required>
+                    <button class="add-transaction-button" type="submit">Add transaction</button>
+                </form>
+            </section>
+
+            <section class="transactions-panel" aria-labelledby="transactions-title">
+                <div class="transactions-heading">
+                    <div>
+                        <p class="tracker-eyebrow">Your activity</p>
+                        <h2 id="transactions-title">Transactions</h2>
+                    </div>
+                    <label class="filter-picker" for="transaction-filter">
+                        <span class="visually-hidden">Filter transactions</span>
+                        <select id="transaction-filter">
+                            <option value="all">Everything</option>
+                            <option value="expense">Expenses</option>
+                            <option value="income">Income</option>
+                        </select>
+                    </label>
+                </div>
+                <ul id="transaction-list" class="transaction-list" aria-live="polite"></ul>
+            </section>
+        </div>
+        <p class="privacy-note">Your information stays in this browser and is saved automatically.</p>
+    </main>
+
+    <footer class="tracker-footer">
+        <a href="project.html">Back to Projects</a>
+        <span>Made for clearer money decisions.</span>
+    </footer>
+    <script src="../javascript files/expense-tracker.js"></script>
+</body>
+</html>

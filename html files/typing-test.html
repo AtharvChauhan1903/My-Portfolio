@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07111f">
+    <meta name="description" content="Test your typing speed and accuracy with a random paragraph.">
+    <title>Typing Speed Test | Atharv Chauhan</title>
+    <link rel="stylesheet" href="../css files/pages.css">
+    <link rel="stylesheet" href="../css files/typing-test.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Skills.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="typing-page">
+        <section class="typing-hero" aria-labelledby="page-title">
+            <p class="typing-eyebrow">A few words at a time</p>
+            <h1 id="page-title">Find your<br>typing rhythm.</h1>
+            <p>Type the passage below. Your timer starts with your first keystroke, and your review will show how you did.</p>
+            <p class="benchmark-note">Choose the level that feels right. Each level has its own practice benchmark and randomly assembled passages.</p>
+            <div class="typing-level-control">
+                <label for="typing-level">Your typing level</label>
+                <select id="typing-level">
+                    <option value="beginner">Beginner</option>
+                    <option value="experienced">Experienced</option>
+                    <option value="professional">Professional</option>
+                    <option value="competitive">Competitive</option>
+                </select>
+                <p id="benchmark-description">Benchmarks are rough practice references, not universal averages.</p>
+            </div>
+        </section>
+
+        <section class="typing-card" aria-label="Typing speed test">
+            <div class="typing-toolbar">
+                <p id="typing-status" role="status" aria-live="polite">Ready when you are. Start typing to begin.</p>
+                <div class="typing-clock" aria-label="Time elapsed">
+                    <span>TIME</span>
+                    <strong id="typing-timer">00:00</strong>
+                </div>
+            </div>
+
+            <p id="passage" class="typing-passage" aria-label="Paragraph to type"></p>
+
+            <label class="visually-hidden" for="typing-input">Type the paragraph shown above</label>
+            <textarea
+                id="typing-input"
+                rows="4"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="Click here and start typing..."
+            ></textarea>
+
+            <div class="typing-progress-row">
+                <span id="typing-progress">0 characters typed</span>
+                <span>Errors are highlighted as you type</span>
+            </div>
+            <div class="typing-actions">
+                <button id="finish-test" class="typing-button typing-button-secondary" type="button" disabled>Finish test</button>
+                <button id="new-passage" class="typing-button typing-button-secondary" type="button">New paragraph</button>
+                <button id="reset-test" class="typing-button" type="button">Restart test</button>
+            </div>
+        </section>
+
+        <section id="results" class="results-panel" aria-labelledby="results-title" hidden>
+            <div class="results-heading">
+                <div>
+                    <p class="typing-eyebrow">Your practice pays off</p>
+                    <h2 id="results-title">Your typing review</h2>
+                </div>
+                <p id="performance-note" class="performance-note"></p>
+            </div>
+            <div class="results-grid">
+                <article class="result-card result-highlight">
+                    <span>Average speed</span>
+                    <strong><span id="result-wpm">0</span> <small>WPM</small></strong>
+                    <p id="result-net-wpm">0 net WPM</p>
+                </article>
+                <article class="result-card result-benchmark">
+                    <span>Compared with your level</span>
+                    <strong id="result-comparison">—</strong>
+                    <p id="benchmark-reference">Compared using net WPM</p>
+                </article>
+                <article class="result-card">
+                    <span>Accuracy</span>
+                    <strong><span id="result-accuracy">0</span><small>%</small></strong>
+                    <p>Correct characters</p>
+                </article>
+                <article class="result-card">
+                    <span>Time taken</span>
+                    <strong id="result-time">00:00</strong>
+                    <p>From first key to finish</p>
+                </article>
+                <article class="result-card">
+                    <span>Errors made</span>
+                    <strong id="result-errors">0</strong>
+                    <p>Including corrected mistakes</p>
+                </article>
+                <article class="result-card">
+                    <span>Omissions</span>
+                    <strong id="result-omissions">0</strong>
+                    <p>Characters left out</p>
+                </article>
+                <article class="result-card">
+                    <span>Errors corrected</span>
+                    <strong id="result-corrected">0</strong>
+                    <p>Mistakes fixed while typing</p>
+                </article>
+            </div>
+            <button id="try-again" class="typing-button" type="button">Try another paragraph</button>
+        </section>
+    </main>
+
+    <footer class="typing-footer">
+        <a href="project.html">Back to Projects</a>
+        <span>One paragraph closer to your personal best.</span>
+    </footer>
+    <script src="../javascript files/typing-test.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07111f">
+    <meta name="description" content="Generate, lock, copy, and export polished color palettes.">
+    <title>Color Palette Generator | Atharv Chauhan</title>
+    <link rel="stylesheet" href="../css files/pages.css">
+    <link rel="stylesheet" href="../css files/color-palette.css">
+</head>
+<body>
+    <header>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Skills.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="Education.html">Education</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="palette-page">
+        <section class="palette-hero" aria-labelledby="page-title">
+            <div>
+                <p class="palette-eyebrow">A palette for every idea</p>
+                <h1 id="page-title">Color Palette<br>Generator</h1>
+            </div>
+            <p>Find a balanced set of colors, lock the favorites, and make the rest feel just right.</p>
+        </section>
+
+        <section class="palette-controls" aria-label="Palette settings">
+            <label for="harmony-select">
+                <span>Harmony</span>
+                <select id="harmony-select">
+                    <option value="analogous">Analogous</option>
+                    <option value="complementary">Complementary</option>
+                    <option value="split-complementary">Split complementary</option>
+                    <option value="triadic">Triadic</option>
+                    <option value="monochromatic">Monochromatic</option>
+                </select>
+            </label>
+
+            <label for="color-count">
+                <span>Colors</span>
+                <select id="color-count">
+                    <option value="3">3 colors</option>
+                    <option value="4">4 colors</option>
+                    <option value="5" selected>5 colors</option>
+                </select>
+            </label>
+
+            <label for="format-select">
+                <span>Format</span>
+                <select id="format-select">
+                    <option value="hex">HEX</option>
+                    <option value="rgb">RGB</option>
+                </select>
+            </label>
+
+            <button id="generate-button" class="generate-button" type="button">
+                <span aria-hidden="true">↻</span>
+                Generate palette
+            </button>
+        </section>
+
+        <p id="palette-status" class="palette-status" role="status" aria-live="polite"></p>
+
+        <section id="palette" class="palette-grid" aria-label="Generated color palette"></section>
+
+        <div class="palette-actions">
+            <button id="copy-all-button" class="secondary-button" type="button">Copy all colors</button>
+            <button id="export-button" class="secondary-button" type="button">Export CSS</button>
+        </div>
+
+        <footer class="palette-footer">
+            <a href="project.html">Back to Projects</a>
+            <span>Tip: press <kbd>Space</kbd> to generate.</span>
+        </footer>
+    </main>
+
+    <script src="../javascript files/color-palette.js"></script>
+</body>
+</html>

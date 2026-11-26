@@ -279,6 +279,36 @@ footer h2 {
     }
 }
 
+.projects-page .project-content > h2 {
+    color: #ffffff;
+}
+
+.projects-page .project-content a,
+.projects-page .project-shortcuts a {
+    color: #8be9f5;
+    font-weight: 600;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
+.projects-page .project-content a:visited,
+.projects-page .project-shortcuts a:visited {
+    color: #a6e3fc;
+}
+
+.projects-page .project-content a:hover,
+.projects-page .project-shortcuts a:hover,
+.projects-page .project-content a:focus-visible,
+.projects-page .project-shortcuts a:focus-visible {
+    color: #ffffff;
+}
+
+.projects-page .project-content a:focus-visible,
+.projects-page .project-shortcuts a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 }
 
 .java-challenge-item > .java-challenge-tools {
@@ -325,7 +355,7 @@ footer h2 {
 
 .java-output-panel p {
     margin-bottom: 0.55rem;
-    color: var(--muted);
+    color: #c4d5e0;
     font-size: 0.85rem;
 }
 
